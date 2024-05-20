@@ -17,7 +17,7 @@ public class TratadorDeErros {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    //metodo para trazer uma mensagem de rro mais amigavem no body com apenas dois campos
+    //metodo para trazer uma mensagem de erro mais amigavel no body com apenas dois campos
     public ResponseEntity tratarErro400(MethodArgumentNotValidException ex){
         var erros = ex.getFieldErrors();
         var lista= erros.stream().map(DadosErroValidacao::new).toList();
